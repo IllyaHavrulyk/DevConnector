@@ -1,4 +1,6 @@
 {
     "mongoUri": "mongodb+srv://illya:illya@devconnector.p801k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "07c85686c5ed0f583f81",
+    "githubClientSecret": "dc097cc6c8962e4a6516329bc7e2799090a687cd"
 }
