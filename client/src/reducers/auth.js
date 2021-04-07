@@ -1,4 +1,4 @@
-import { REGISTER_FAIL } from "../actions/types";
+import { REGISTER_FAIL, ACCOUNT_DELETED } from "../actions/types";
 import { REGISTER_SUCCESS, USER_LOADED, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from './../actions/types';
 import { AUTH_ERROR } from "./../actions/types";
 
@@ -32,6 +32,7 @@ export default function (state = initialState, action) {
         case REGISTER_FAIL:
         case LOGIN_FAIL:
         case LOGOUT:
+        case ACCOUNT_DELETED:
             localStorage.removeItem('token')
             return {
                 ...state,
