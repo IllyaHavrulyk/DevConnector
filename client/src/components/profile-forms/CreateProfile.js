@@ -124,6 +124,8 @@ const CreateProfile = ({ createProfile, history }) => {
             type="text"
             placeholder="Github Username"
             name="githubusername"
+            onChange={(e) => onChange(e)}
+            value={githubusername}
           />
           <small className="form-text">
             If you want your latest repos and a Github link, include your

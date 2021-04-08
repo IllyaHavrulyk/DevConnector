@@ -148,6 +148,7 @@ const EditProfile = ({
             type="text"
             placeholder="Github Username"
             name="githubusername"
+            onChange={(e) => onChange(e)}
             value={githubusername}
           />
           <small className="form-text">

@@ -73,7 +73,11 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (skills) {
-      profileFields.skills = skills.split(",").map((skill) => skill.trim());
+      if (typeof skills === "string") {
+        profileFields.skills = skills.split(",").map((skill) => skill.trim());
+      } else {
+        profileFields.skills = skills.map((skill) => skill.trim());
+      }
     }
     if (githubusername) profileFields.githubusername = githubusername;
 
@@ -326,9 +330,9 @@ router.get("/github/:username", async (req, res) => {
     const options = {
       uri: `https://api.github.com/users/${
         req.params.username
-      }/repos?sort=created:asc&client_id=${config.get(
-        "githubClientId"
-      )}&client_secret=${config.get("githubClientSecret")}`,
+        }/repos?sort=created:asc&client_id=${config.get(
+          "githubClientId"
+        )}&client_secret=${config.get("githubClientSecret")}`,
       method: "GET",
       headers: { "user-agent": "node.js" },
     };
